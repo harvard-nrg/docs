@@ -1,0 +1,1349 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../software/scanbuddy/scanbuddy/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Claude Code Guide - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-a-huit-customer-account" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Claude Code Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/harvard-nrg/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/harvard-nrg/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    iProc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    iProc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/iproc/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/iproc/kilmer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kilmer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quality Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/qc/anatqc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AnatQC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/qc/boldqc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BOLDQC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/qc/dwiqc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DWIQC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/qc/t2qc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T2QC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/scanbuddy/scanbuddy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan Buddy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-huit-customer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a HUIT Customer Account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-api-portal-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new API Portal App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new API Portal App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launching-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launching VS Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Launching VS Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-claude-code-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install the Claude Code extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-the-login-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable the Login Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-huit-customer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a HUIT Customer Account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-api-portal-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new API Portal App
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new API Portal App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launching-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launching VS Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Launching VS Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-claude-code-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install the Claude Code extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-the-login-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable the Login Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Claude Code Guide</h1>
+
+<div class="admonition danger">
+<p class="admonition-title">CRITICAL SAFETY WARNING</p>
+<p><strong>Do not deploy AI or autonomous AI agents in environments containing 
+Protected Health Information (PHI) without a comprehensive risk 
+assessment.</strong></p>
+<p>Autonomous agents operate with a high degree of unpredictability. When 
+executing complex objectives, an agent may bypass security boundaries, 
+<a href="https://www.anthropic.com/engineering/how-we-contain-claude">break out of isolated sandbox environments</a>, or take unintended 
+actions that violate ethical or compliance standards. You must fully 
+understand these operational risks and implement strict guardrails to 
+prevent unauthorized data exposure or non-compliance.</p>
+</div>
+<p><a href="https://www.huit.harvard.edu/ai-developer-tools">HUIT AI Services</a> provides generative AI tools that are approved for use 
+within a Data Security Level 3 environment through the 
+<a href="https://portal.apis.huit.harvard.edu/" target="_blank">HUIT API Portal</a>. </p>
+<p>The following guide will demonstrate how to configure the Claude Code for VS
+Code extension using one of the Claude Opus models provided through the 
+API Portal.</p>
+<h2 id="create-a-huit-customer-account">Create a HUIT Customer Account</h2>
+<div class="admonition question">
+<p class="admonition-title">Do you already have a HUIT customer account?</p>
+<p>Check with your lab manager or department administrator to see if you already 
+have a HUIT customer account and associated billing number. Your billing
+number should be a "B" followed by five numbers.</p>
+</div>
+<p>Before you can request access to any of the "API Products" within the 
+<a href="https://portal.apis.huit.harvard.edu/apis" target="_blank">HUIT API Catalog</a>, you will need a HUIT customer account
+and billing number. HUIT Finance provides <a href="https://billing.huit.harvard.edu/portal/allusers/newcustomer" target="_blank">a form to obtain one</a>.</p>
+<p>Note that you will be required to enter a 33-digit billing code to complete this 
+form.</p>
+<h2 id="create-a-new-api-portal-app">Create a new API Portal App</h2>
+<p>You must create an <code>App</code> within the <a href="https://portal.apis.huit.harvard.edu/" target="_blank">HUIT API Portal</a> and pick at 
+least one API Product for the app to use.</p>
+<ul>
+<li>Go to the <a href="https://portal.apis.huit.harvard.edu/" target="_blank">HUIT API Portal</a> and Sign In with your Harvard Key. </li>
+<li>Go the <a href="https://portal.apis.huit.harvard.edu/my-apps/new-app" target="_blank">New App form</a> to create a new app.</li>
+</ul>
+<h3 id="app-name">App Name</h3>
+<p>HUIT AI Services recommends that you choose an <code>App Name</code> that reflects the name 
+of the application that will be using the API. Use the following as a template</p>
+<div class="highlight"><pre><span></span><code>&lt;lab&gt;-bedrock-vscode-&lt;username&gt;
+</code></pre></div>
+<h3 id="description">Description</h3>
+<p>HUIT AI Services provides <a href="https://portal.apis.huit.harvard.edu/ai-services-request-access-with-billing" target="_blank">specific guidelines</a>
+on what to enter for your app's description. Your app description must contain your HUIT 
+customer billing number and an upper $ limit on spending for your app. Use the following 
+as a template</p>
+<div class="highlight"><pre><span></span><code>B99999 - limit of $100/month - FAS Psychology - NIH Grant R01-xyz123
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>Your API Product request will be automatically rejected if you do not include 
+your HUIT customer billing number in the description field. An upper spending 
+limit is not required, but strongly advised.</p>
+</div>
+<h3 id="owner">Owner</h3>
+<p>You can choose yourself to be the sole owner of the app, or select a Team
+to be the owner.</p>
+<p>Choosing a Team is recommended as this allows multiple lab members to manage 
+the app e.g., principal investigator, lab manager, department administrator, 
+etc.</p>
+<p>Use the <a href="https://portal.apis.huit.harvard.edu/teams/new" target="_blank">New Team form</a> to create a new team.</p>
+<h3 id="apis">APIs</h3>
+<p>As this tutorial is intended to get you up and running using Claude Code within 
+VS Code, you need to request access to the following API</p>
+<div class="highlight"><pre><span></span><code>AI Services - AWS Bedrock API
+</code></pre></div>
+<p>While API approval is automated, it's not instantaneous. You will need to wait
+several minutes for your access to be approved. Check your email regularly for 
+approval status.</p>
+<h3 id="api-keys">API Keys</h3>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>Make sure you read this part carefully as you will need your API Key to 
+complete this tutorial.</p>
+</div>
+<p>Take note of your API Key (not the secret). You will need this when setting up
+your Claude settings later on.</p>
+<h2 id="configuring-visual-studio-code">Configuring Visual Studio Code</h2>
+<p>Once your API Product access has been approved, you can begin setting up the 
+<a href="https://code.claude.com/docs/en/vs-code" target="_blank">Claude Code Extension</a> for VS Code.</p>
+<h3 id="claude-settings">Claude settings</h3>
+<p>Run the following command to create a directory named <code>~/.claude</code> in your home 
+directory and set the permissions to <code>rwx------</code></p>
+<div class="highlight"><pre><span></span><code>install<span class="w"> </span>-d<span class="w"> </span>-m<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.claude
+</code></pre></div>
+<p>Next, create a file within this directory named <code>~/.claude/settings.json</code> and 
+add the following contents</p>
+<div class="admonition info">
+<p>In the JSON blob below, be sure to enter your <a href="#api-keys">API Key</a> into the
+<code>ANTHROPIC_API_KEY</code> field.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://json.schemastore.org/claude-code-settings.json"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ANTHROPIC_BEDROCK_BASE_URL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://go.apis.huit.harvard.edu/ais-bedrock-llm/v2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ANTHROPIC_CUSTOM_HEADERS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x-api-key: ******************"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ANTHROPIC_MODEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us.anthropic.claude-opus-4-6-v1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ANTHROPIC_SMALL_FAST_MODEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us.anthropic.claude-haiku-4-5-20251001-v1:0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"CLAUDE_CODE_SKIP_BEDROCK_AUTH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"CLAUDE_CODE_USE_BEDROCK"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"CLAUDE_CODE_ATTRIBUTION_HEADER"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="launching-vs-code">Launching VS Code</h3>
+<p>There are several versions of VS Code available as modules within FAS-RC HPC
+environments.</p>
+<h4 id="load-the-module">Load the module</h4>
+<div class="admonition example">
+<p class="admonition-title">VS Code versions</p>
+<p>At the time of this writing, the latest version of VS Code available on 
+FASSE is <code>vscode/1.111-fasrc01</code>. You can always check for newer versions by 
+running <code>module spider vscode</code>.</p>
+</div>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>vscode/1.111-fasrc01
+</code></pre></div>
+<h4 id="launch-code">Launch <code>code</code></h4>
+<p>It's best to launch VS Code (and use Claude Code) within a directory that
+contains actual source code. We'll use <a href="https://github.com/harvard-nrg/iProc" target="_blank">iProc</a> as an
+example here, but you can use any source code that is of relevance to you. </p>
+<p>Clone iProc from GitHub and launch VS Code from within the cloned respository 
+directory</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/harvard-nrg/iProc
+<span class="nb">cd</span><span class="w"> </span>iProc
+code<span class="w"> </span>.
+</code></pre></div>
+<h3 id="install-the-claude-code-extension">Install the Claude Code extension</h3>
+<div class="admonition info">
+<p class="admonition-title">Be sure to install the official extension from Anthropic</p>
+<p>Make sure you install the official <code>Claude Code for VS Code</code> extension by
+looking for the one published by Anthropic. You should see a little blue 
+checkmark next to the author's name, indicating they are a verified publisher.</p>
+</div>
+<p>Within the VS Code menu, go to <code>View &gt; Extensions</code> and search for <code>Claude Code 
+for VS Code</code>. Be sure to install the official version of this extension by
+Anthropic.</p>
+<h3 id="disable-the-login-prompt">Disable the Login Prompt</h3>
+<p>When using an enterprise-specific backend such as <a href="https://portal.apis.huit.harvard.edu/docs/ais-bedrock-llm/1/overview">Harvard AIS AWS Bedrock</a>, 
+you need to disable the Claude Code Extension's Login Prompt. </p>
+<p>To do this</p>
+<ol>
+<li>Click on the cog wheel icon in the bottom left sidebar of VS Code.</li>
+<li>Click on <code>Settings</code>.</li>
+<li>In the Settings search bar, enter <code>claudeCode.disableLoginPrompt</code>. </li>
+<li>Make sure the <code>Claude Code: Disable Login Prompt</code> checkbox is checked.</li>
+</ol>
+<p><img alt="Alt text" src="../images/disableLoginPrompt.png" /></p>
+<h2 id="using-claude-code">Using Claude Code</h2>
+<p>After you have installed the Claude Code for VS Code extension, you should see a
+Claude icon within in the left sidebar of VS Code. Clicking on this icon will
+launch the extension. </p>
+<p>Click on <code>+ New Session</code> to start a new interactive session and enter <code>Hello</code>
+into the chat prompt. This should yield a typical LLM response</p>
+<p><img alt="Alt text" src="../images/helloWorld.png" /></p>
+<p>You're now ready to ask Claude questions about your software project, help you
+fix bugs, or help you write new features!</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you see errors such as <code>403</code>, <code>Unauthorized</code>, <code>invalid model identifier</code>, or
+errors about your API Key, feel free to reach out to <code>apihelp@harvard.edu</code> or 
+<code>info@neuroinfo.org</code> for assistance.</p>
+<p>Happy Claude-ing!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
