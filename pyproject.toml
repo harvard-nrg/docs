@@ -1,0 +1,12 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "docs"
+version = "v1.0.0"
+dependencies = [
+    "mkdocs",
+    "mkdocs-material"
+]
+
