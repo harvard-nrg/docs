@@ -43,9 +43,12 @@ nav:
     - iProc:
       - Kilmer: software/iproc/kilmer.md
       - Quickstart: software/iproc/quickstart.md
+    - Libraries:
+      - YAXIL (ArcGet.py): software/libs/yaxil.md
     - Quality Control:
       - AnatQC: software/qc/anatqc.md
       - BOLDQC: software/qc/boldqc.md
       - DWIQC: software/qc/dwiqc.md
+      - MR Verify: software/qc/mrverify.md
       - T2QC: software/qc/t2qc.md
     - Scan Buddy: software/scanbuddy/scanbuddy.md
